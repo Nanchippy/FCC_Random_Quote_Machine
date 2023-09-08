@@ -9,8 +9,8 @@ let quoteDBUrl = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c958
 function App() {
   const [quote,setQuote]=useState("In order to succeed, your desire for success should be greater than your fear of failure.")
   const [author,setAuthor]=useState("Bill Cosby") 
-  const [randomNumber,setRandomNumber]= useState(0)
-  const [quotesArray,setQuotesArray]= useState([])
+ //const [randomNumber,setRandomNumber]= useState(0)
+  const [quotesArray,setQuotesArray]= useState(0)
   const [changeColour,setChangeColour]=useState('#282c34')
 
    const fetchQuotes = async (url)=>{               //fetching json
@@ -21,20 +21,21 @@ function App() {
   }
 
    useEffect(()=>{
-   fetchQuotes()
-    },[quoteDBUrl]
+   fetchQuotes(quoteDBUrl)
+    },[]
    )
 
  const getRandomQuote=()=>{
   if (quotesArray.length === 0) {
-    return; // Don't proceed if the array is empty
+    return;
   }
     let randomNumber = Math.floor(quotesArray.length * Math.random())
-    setRandomNumber(randomNumber)
+    //setRandomNumber(randomNumber);
     setChangeColour(COLOURARRAY[randomNumber])
     setQuote(quotesArray[randomNumber].quote)
     setAuthor(quotesArray[randomNumber].author)
   }
+
   return (
     <div className="App">
     <header className="App-header" style={{background:changeColour,color:changeColour}}>
