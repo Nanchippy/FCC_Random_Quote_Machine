@@ -1,3 +1,3 @@
 This is a random quote machine for FreeCode certification
 
-https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js
+https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine
